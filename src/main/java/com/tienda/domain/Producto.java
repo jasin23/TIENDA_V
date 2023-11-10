@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
 
-@Data 
+@Data //Pone los set y get...
 @Entity
 @Table(name = "producto")
 public class Producto implements Serializable {
@@ -14,18 +14,18 @@ public class Producto implements Serializable {
     @Id //Llave de la clase
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_producto")
-    private Long idProducto;
-   /* private Long idCategoria;*/
+    private Long idProducto; 
+
+    //Se puso en orden segun la base de datos
+    //private Long idCategoria;
     private String descripcion;
     private String detalle;
     private double precio;
-    private int existencias;        
+    private int existencias;
     private String rutaImagen;
-    private boolean activo;
+    private Boolean activo;
 
-    @ManyToOne //Ya que se pone esto se quita el "private Long idCategoria;"
+    @ManyToOne //Ya que se pone esto, se quita el "private Long idCategoria;"
     @JoinColumn(name="id_categoria")
-    Categoria categoria;
-
-
+     Categoria categoria;
 }
