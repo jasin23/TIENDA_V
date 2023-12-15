@@ -19,13 +19,12 @@ public class ProductoServiceImpl implements ProductoService{
     @Autowired
     private ProductoDao productoDao;
     
-    @Override
     public List<Producto> getProductos(boolean activo) {
-       var productos = productoDao.findAll();
-        if (activo) {
-             productos.removeIf(e -> !e.getActivo());
+       var productos= productoDao.findAll();
+       if (activo) {
+            productos.removeIf(e -> !e.getActivo());
         }
-        return productos; 
+       return productos;
     }
     
       @Override
