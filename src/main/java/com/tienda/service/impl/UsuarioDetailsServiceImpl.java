@@ -1,4 +1,4 @@
-package com.tienda.service.impl;
+ package com.tienda.service.impl;
 
 import com.tienda.service.UsuarioDetailsService;
 import com.tienda.dao.UsuarioDao;
